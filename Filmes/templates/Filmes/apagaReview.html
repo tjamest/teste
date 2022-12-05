@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Apaga review</title>
+    <link rel="stylesheet" href="{% static 'Filmes/css/estilo.css' %}">
+    
+</head>
+<body>
+    {% include 'Filmes/linksHeader.html' %}
+  <h1>Remoção de reviews</h1>
+  <form method="POST">
+    {% csrf_token %}
+   Confirma a remoção de {{ review }}?<br>
+   <button>
+       <a href="{% url 'Filmes:lista-review' %}" 
+          style="text-decoration: none; color: black;">Cancela</a>
+   </button>
+   <input type="submit" value="Remove">
+</form>
+</body>
+</html>

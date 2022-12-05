@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Atualiza review</title>
+    <link rel="stylesheet" href="{% static 'contatos/css/form.css' %}">
+    
+</head>
+<body>
+    {% include 'Filmes/linksHeader.html' %}
+  <h1>Atualização de review</h1>
+  <form method="POST" class='formulario'>
+    {% csrf_token %}
+    <table>
+      {{ review.as_table }}
+    </table>
+  </form>
+  <input type="submit" value="Atualiza" class="button">
+</body>
+</html>
